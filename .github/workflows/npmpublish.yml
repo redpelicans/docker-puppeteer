@@ -11,4 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: echo ${{ secrets.DOCKER_PASSWORD }}  | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
+      - run: docker build -t redpelicans/puppeteer . 
+      - run: docker push redpelicans/puppeteer 
 
