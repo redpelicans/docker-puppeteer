@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish docker image
 
 on:
   push:
@@ -10,4 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: echo "{\"auths\":{\"https://index.docker.io/v1/\":{\"auth\":\"${{ secrets.DOCKER_AUTH }}\"}}}" > ~/.docker/config.json
       - run: docker login
