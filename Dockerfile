@@ -1,4 +1,5 @@
-FROM node:10.17.0-slim
+# FROM node:10.17.0-slim
+FROM node:13.5.0-slim
 
 RUN apt-get update && \
 apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
